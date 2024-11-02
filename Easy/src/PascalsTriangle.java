@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PascalsTriangle {
     /*
@@ -20,6 +22,16 @@ public class PascalsTriangle {
         List<List<Integer>> list = generate(6);
         for(List list1 : list) {
             System.out.println(list1);
+        }
+
+        Map<Integer, Integer> map = new HashMap<>();
+        int[] values = new int[]{1,2,3,4,5,7,8,1,2};
+        for(int value : values){
+            if(map.containsKey(value)){
+                System.out.println("ALREADY IN!");
+            } else {
+                map.put(value, map.getOrDefault(value, 0) + 1);
+            }
         }
 
     }
